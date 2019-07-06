@@ -1,4 +1,4 @@
-package com.eu.codingchallenge;
+package com.eu.codingchallenge.input;
 
 /**
  * @author RameshJothimani

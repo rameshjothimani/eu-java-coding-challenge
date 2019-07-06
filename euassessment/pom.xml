@@ -31,5 +31,28 @@
         </build>
     </profile>
 
+    <profile>
+        <id>fileGen</id>
+        <build>
+            <resources>
+                <resource>
+                    <directory>src/main/java</directory>
+                    <filtering>true</filtering>
+                    <includes>
+                        <include>**/**/DynamicMainClass.java</include>
+                    </includes>
+                </resource>
+
+                <!--<resource>-->
+                    <!--<directory>src/main/resources</directory>-->
+                    <!--<filtering>false</filtering>-->
+                    <!--<excludes>-->
+                        <!--<exclude>**/version.txt</exclude>-->
+                    <!--</excludes>-->
+                <!--</resource>-->
+
+            </resources>
+        </build>
+    </profile>
 </profiles>
 </project>
