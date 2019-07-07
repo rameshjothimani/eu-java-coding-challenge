@@ -30,29 +30,26 @@ import java.lang.reflect.Method;
 
 public class DynamicMainClass {
 
-    public static void main(String[] args) throws InstantiationException,IllegalAccessException {
+    public static void main(String[] args) throws InstantiationException, IllegalAccessException {
 
         ProxyFactory factory = new ProxyFactory();
-
         factory.setSuperclass(HelloMessageAbstract.class);
 
         factory.setHandler(new MethodHandler() {
-
             public Object invoke(Object arg0, Method method, Method arg2, Object[] arg3) {
 
-                String name = method.getName();
+                String methodName = method.getName();
 
                 //Process the method names dynamically
-                if(name.equals("writeToConsole")) {
+                if (methodName.equals("writeToConsole")) {
                     System.out.println("Hello World!");
                     return null;
                 }
-               return null;
+                return null;
             }
         });
 
         Class classObj = factory.createClass();
-
         Object object = classObj.newInstance();
 
         //get the class name dynamically using maven
