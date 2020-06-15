@@ -1,4 +1,4 @@
-# eu-java-coding-challenge
+# java-coding-challenge
 
 Question :
 
